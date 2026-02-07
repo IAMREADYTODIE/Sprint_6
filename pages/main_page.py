@@ -8,10 +8,8 @@ class MainPage(BasePage):
     def accept_cookies(self):
         """Метод закрывает плашку с куками, если она появилась."""
         try:
-            # Ждем кнопку куки чуть меньше (5 сек), чтобы не тратить время всего теста
             self.click_element(MainPageLocators.COOKIE_BUTTON)
         except:
-            # Если кнопка не появилась — просто игнорируем и идем дальше
             pass
 
     @allure.step("Кликаем на вопрос номер {num}")
@@ -45,3 +43,4 @@ class MainPage(BasePage):
     @allure.step("Кликаем на логотип Яндекса")
     def click_yandex_logo(self):
         self.click_element(MainPageLocators.YANDEX_LOGO)
+        
